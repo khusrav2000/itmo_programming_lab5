@@ -3,7 +3,7 @@
     "address":"Чкаловский проспект",
     "pharmacist":{
       "name":"Вася",
-      "last_ame":"Иванов"
+      "lastName":"Иванов"
     },
     "medicaments":[
       {

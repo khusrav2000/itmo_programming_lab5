@@ -1,11 +1,11 @@
 package ru.ifmo.se.lab5;
 
 public class Pharmacist {
-    String name, latsName;
+    String name, lastName;
 
     public Pharmacist(String name, String latsName) {
         this.name = name;
-        this.latsName = latsName;
+        this.lastName = latsName;
     }
 
     public String getName() {
@@ -17,18 +17,18 @@ public class Pharmacist {
     }
 
     public String getLatsName() {
-        return latsName;
+        return lastName;
     }
 
     public void setLatsName(String latsName) {
-        this.latsName = latsName;
+        this.lastName = latsName;
     }
 
     @Override
     public String toString() {
         return "Pharmacist{" +
                 "name='" + name + '\'' +
-                ", latsName='" + latsName + '\'' +
+                ", latsName='" + lastName + '\'' +
                 '}';
     }
 }

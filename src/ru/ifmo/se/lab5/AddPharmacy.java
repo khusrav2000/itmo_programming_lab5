@@ -13,7 +13,7 @@ class AddPharmacy {
 
     private static Scanner scan = new Scanner(System.in);
     private static Scanner sc = new Scanner(System.in);
-    private final String JSON_FILE_NAME = "C:\\Users\\KHUSRAV\\Documents\\Programming\\Java\\LabsItmo\\ProgLab5_2\\src\\ru\\ifmo\\se\\lab5\\Pharmacies.json"; //Путь к Json файлу
+    private final String JSON_FILE_NAME = "C:\\Users\\KHUSRAV\\Documents\\IntellijIDEAProjects\\itmo_programming_lab5\\src\\ru\\ifmo\\se\\lab5\\Pharmacies.json"; //Путь к Json файлу
     Vector<Pharmacy> pharmacies = new Vector<>();
 
     void startAdd() {
@@ -21,9 +21,9 @@ class AddPharmacy {
             // команда которая приходить из командной строки
             String command = scan.nextLine();
             String load = "^load$";
-            String removeElement = "^remove\\s\\{.*[:]{1}.*[,].*[:]{1}.*[,].*[:]{1}.*[,].*[:]{1}.*\\}$";
+            String removeElement = "^remove\\s*\\{\"";
             String info = "^info$";
-            String addElement = "^add\\s\\{.*[:]{1}.*[,].*[:]{1}.*[,].*[:]{1}.*[,].*[:]{1}.*\\}$";
+            String addElement = "^add\\s\\{\"";
             String removeIndex = "^remove\\s\\{\\d*\\}";
             String show = "^show$";
             String remove_first = "^remove_first$";
@@ -31,11 +31,72 @@ class AddPharmacy {
             if (Pattern.compile(load).matcher(command).find()) {
                 System.out.println("load");
                 load();
+            } else if (Pattern.compile(show).matcher(command).find()){
+                showCollection();
+            } else if (Pattern.compile(remove_first).matcher(command).find()){
+                deleteFirstElement();
+            } else if (Pattern.compile(removeIndex).matcher(command).find()){
+                deleteElementByIndex(command);
+            } else if (Pattern.compile(removeElement).matcher(command).find()){
+                deleteElementByValue(command.substring(7, command.length()));
+            } else if (Pattern.compile(addElement).matcher(command).find()){
+                addElementToCollection(command.substring(4, command.length()));
+            } else {
+                System.out.println("Неправилная команда");
             }
-            if (Pattern.compile(show).matcher(command).find()){
-                //getCollaction
-            }
+
+
             System.out.println(getSizeOfPharmacies());;
+        }
+    }
+
+    private void addElementToCollection(String element) {
+
+        JsonParser jsonParser = new JsonParser();
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+
+        try {
+            JsonObject jsonObject = (JsonObject) jsonParser.parse(element.toString());
+            Pharmacy pharmacy = gson.fromJson(jsonObject, Pharmacy.class);
+            pharmacies.add(pharmacy);
+        } catch (Exception e){
+            System.out.println("Неправилная команда");
+        }
+    }
+
+    private void deleteElementByValue(String element) {
+
+        JsonParser jsonParser = new JsonParser();
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+
+        try {
+            JsonObject jsonObject = (JsonObject) jsonParser.parse(element.toString());
+            Object pharmacy = gson.fromJson(jsonObject, Pharmacy.class);
+            for (int i = 0 ; i < pharmacies.size(); i ++) {
+                if (pharmacies.get(i).toString().equals(pharmacy.toString())) {
+                    pharmacies.remove(i);
+                    i --;
+                }
+            }
+        } catch (Exception e){
+            System.out.println("Неправилная команда");
+        }
+    }
+
+    private void deleteElementByIndex(String stringIndex) {
+        int index = Integer.parseInt(stringIndex.substring(8, stringIndex.length() -2));
+        pharmacies.remove(index);
+    }
+
+    private void deleteFirstElement() {
+        pharmacies.remove(0);
+    }
+
+    private void showCollection() {
+        for (Pharmacy pharmacy : pharmacies){
+            System.out.println(pharmacy.toString());
         }
     }
 
@@ -73,7 +134,6 @@ class AddPharmacy {
     }
 
     private int getSizeOfPharmacies(){
-        System.out.println(pharmacies.get(0).toString());
         return pharmacies.size();
     }
 }
