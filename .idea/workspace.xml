@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9d7b9e8-8f1b-4a9a-afb8-5bac2e215e26" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/META-INF/ProgLab3_Hospital.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/AddPharmacy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/AddPharmacy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/Pharmacies.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/Pharmacies.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/Pharmacist.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/Pharmacist.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/AddPharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/AddPharmacy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/Pharmacies.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/Pharmacies.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/Pharmacist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/Pharmacist.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,6 +153,7 @@
       <workItem from="1567772191887" duration="1318000" />
       <workItem from="1567774473068" duration="8909000" />
       <workItem from="1568125854885" duration="753000" />
+      <workItem from="1568981565387" duration="3113000" />
     </task>
     <servers />
   </component>

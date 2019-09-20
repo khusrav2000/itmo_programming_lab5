@@ -2,8 +2,10 @@ package ru.ifmo.se.lab5;
 
 import com.google.gson.*;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Vector;
@@ -45,8 +47,6 @@ class AddPharmacy {
                 System.out.println("Неправилная команда");
             }
 
-
-            System.out.println(getSizeOfPharmacies());;
         }
     }
 
@@ -63,6 +63,8 @@ class AddPharmacy {
         } catch (Exception e){
             System.out.println("Неправилная команда");
         }
+
+        updateData();
     }
 
     private void deleteElementByValue(String element) {
@@ -83,16 +85,22 @@ class AddPharmacy {
         } catch (Exception e){
             System.out.println("Неправилная команда");
         }
+        updateData();
     }
 
     private void deleteElementByIndex(String stringIndex) {
         int index = Integer.parseInt(stringIndex.substring(8, stringIndex.length() -2));
         pharmacies.remove(index);
+
+        updateData();
     }
 
     private void deleteFirstElement() {
         pharmacies.remove(0);
+
+        updateData();
     }
+
 
     private void showCollection() {
         for (Pharmacy pharmacy : pharmacies){
@@ -116,19 +124,48 @@ class AddPharmacy {
         JsonParser jsonParser = new JsonParser();
         System.out.println(jsonData.toString());
         JsonArray jsonArray = (JsonArray) jsonParser.parse(jsonData.toString());
-        System.out.println(jsonArray);
 
         Iterator<JsonElement> iterator = jsonArray.iterator();
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
 
+
+
         while (iterator.hasNext()){
             JsonObject jsonObject = (JsonObject) iterator.next();
 
-            System.out.println();
-
             Pharmacy pharmacy = gson.fromJson(jsonObject, Pharmacy.class);
             pharmacies.add(pharmacy);
+        }
+
+        System.out.println("loaded");
+
+    }
+
+
+    private void updateData() {
+        System.out.println("-1");
+        try {
+            GsonBuilder builder = new GsonBuilder();
+            Gson gson = builder.create();
+
+            StringBuilder answer = new StringBuilder("");
+            for (Pharmacy pharmacy : pharmacies){
+                String json = gson.toJson(pharmacy) + ",";
+                answer.append(json);
+            }
+            answer.deleteCharAt(answer.length() - 1);
+            answer.insert(0, '[');
+            answer.append("]");
+
+            System.out.println(answer);
+            BufferedWriter bw = new BufferedWriter(new FileWriter(JSON_FILE_NAME));
+            bw.write(answer.toString());
+            bw.flush();
+
+
+        } catch (Exception e){
+            System.out.println("Что-то пошло не так!");
         }
 
     }
