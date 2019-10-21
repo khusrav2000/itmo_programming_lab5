@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="itmo_programming_lab5:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d9d7b9e8-8f1b-4a9a-afb8-5bac2e215e26" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/itmo_programming_lab5_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/AddPharmacy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/AddPharmacy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/Pharmacies.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/Pharmacies.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProgLab3_Hospital/ru/ifmo/se/lab5/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/AddPharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/AddPharmacy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/Pharmacies.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/Pharmacies.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/se/lab5/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,12 +58,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="78" />
-    <option name="y" value="51" />
-    <option name="width" value="1146" />
-    <option name="height" value="711" />
-  </component>
   <component name="ProjectId" id="1QSqhYKFvKgBVTSQIk4gGV4C3V3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -68,10 +70,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567773897944" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JavaMaven" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
@@ -153,7 +155,11 @@
       <workItem from="1567772191887" duration="1318000" />
       <workItem from="1567774473068" duration="8909000" />
       <workItem from="1568125854885" duration="753000" />
-      <workItem from="1568981565387" duration="3113000" />
+      <workItem from="1568981565387" duration="8143000" />
+      <workItem from="1570196818753" duration="3617000" />
+      <workItem from="1571394558955" duration="49000" />
+      <workItem from="1571402345994" duration="2189000" />
+      <workItem from="1571684042157" duration="483000" />
     </task>
     <servers />
   </component>

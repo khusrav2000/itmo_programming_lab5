@@ -15,10 +15,19 @@ class AddPharmacy {
 
     private static Scanner scan = new Scanner(System.in);
     private static Scanner sc = new Scanner(System.in);
-    private final String JSON_FILE_NAME = "C:\\Users\\KHUSRAV\\Documents\\IntellijIDEAProjects\\itmo_programming_lab5\\src\\ru\\ifmo\\se\\lab5\\Pharmacies.json"; //Путь к Json файлу
+    private String JSON_FILE_NAME = "C:\\Users\\KHUSRAV\\Documents\\IntellijIDEAProjects\\itmo_programming_lab5\\src\\ru\\ifmo\\se\\lab5\\Pharmacies.json"; //Путь к Json файлу
+    //private final String JSON_FILE_NAME = "/home/s247409/KHUSRAV/itmo_programming_lab5/src/ru/ifmo/se/lab5/Pharmacies.json";
+    //private final String JSON_FILE_NAME = "/home/s247409/KHUSRAV/itmo_programming_lab5/src/ru/ifmo/se/lab5/Pharmacies.json";
+    //private final String JSON_FILE_NAME = "/home/s247409/KHUSRAV/src/ru/ifmo/se/lab5/Pharmacies.json";
+    //private final String JSON_FILE_NAME = "/home/s247409/KHUSRAV/Pharmacies.json";
+    //private final String JSON_FILE_NAME = "./Pharmacies.json";
+    //private final String JSON_FILE_NAME = "./ru/ifmo/se/lab5/Pharmacies.json";
+    File f = new File("test.txt");
+
     Vector<Pharmacy> pharmacies = new Vector<>();
 
-    void startAdd() {
+    void startAdd(String fileName) {
+        //JSON_FILE_NAME = fileName;
         for (;;) {
             // команда которая приходить из командной строки
             String command = scan.nextLine();
@@ -89,8 +98,13 @@ class AddPharmacy {
     }
 
     private void deleteElementByIndex(String stringIndex) {
-        int index = Integer.parseInt(stringIndex.substring(8, stringIndex.length() -2));
-        pharmacies.remove(index);
+        //System.out.println(stringIndex.substring(8, stringIndex.length() - 1));
+        try {
+            int index = Integer.parseInt(stringIndex.substring(8, stringIndex.length() - 1));
+            pharmacies.remove(index);
+        } catch (Exception e){
+            System.out.println("Не удалос удалить элемент");
+        }
 
         updateData();
     }
@@ -109,6 +123,7 @@ class AddPharmacy {
     }
 
     private void load() {
+        System.out.println(f.getAbsolutePath());
 
         try {
             sc = new Scanner(new File(JSON_FILE_NAME));
@@ -144,7 +159,9 @@ class AddPharmacy {
 
 
     private void updateData() {
-        System.out.println("-1");
+        if (pharmacies.size() == 0){
+            return;
+        }
         try {
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
